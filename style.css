@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#character {
+    width: 130px;
+    height: 130px;
+    position: absolute; /*move krnna ona nisa*/
+    left: 20px;
+    top: -20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#logo {
+    width: 250px;
+    height: 250px;
+    background-color: yellow;
+
+    background-position: -30px -70px;
+    background-position-x: 1px;
+    background-position-y: 1px;
+
+}
+
+.rotate {
+    transform: rotateY(-180deg);
+}
+
+#platform {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+
+    div {
+        height: 100%;
+        &:first-child {
+            width: 128px;
+            background-image: url("./image/Tiles/Tile (1).png");
+        }
+
+        &:nth-child(2) {
+            flex-grow: 1;
+            background-image: url("/image/Tiles/Tile (2).png");
+        }
+
+        &:last-child {
+            width: 128px;
+            background-image: url("/image/Tiles/Tile (3).png");
+        }
+    }
+}
+
+body {
+
+}
+
+
+#start-screen {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: darkcyan;
+    background-size: cover;
+    background-position: top center;
+    overflow: hidden;
+    z-index: 2;
+
+    #btnStart {
+        padding: 10px 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: system-ui, sans-serif;
+        border-radius: 25px;
+        background-color: lightgray;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0 0 4px 4px white;
+        }
+
+        &:active {
+            box-shadow: 0 0 4px 4px white, inset 0 0 5px 3px #8a8a8a
+        }
+    }
+
+    h1 {
+        font-family: system-ui, sans-serif;
+        color: white;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    footer {
+        color: white;
+        font-family: system-ui, sans-serif;
+        margin-top: 40px;
+        font-size: small;
+    }
+}
+
+.knife {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-image: url("/image/Kunai.png");*/
+
+}
+
+.e_knife {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-image: url("/image/Kunai.png");*/
+
+}
+
+.enemy {
+    width: 130px;
+    height: 130px;
+    position: absolute; /*move krnna ona nisa*/
+    left: 20px;
+    top: -20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+#play-screen {
+    background-image: url("/image/newBg.png");
+    background-size: cover;
+    background-position: top center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+.hide {
+    animation: fade 700ms forwards;
+}
+
+.hide > * {
+    display: none;
+}
+
+@keyframes fade {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+#overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+    font-family: system-ui, sans-serif;
+    z-index: 1;
+    gap: 20px;
+
+    h1 {
+        text-shadow: 0 0 8px white;
+    }
+
+    #progress-bar {
+        width: 90%;
+        height: 10px;
+        background-color: #787878;
+        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.66);
+        border-radius: 5px;
+
+        #bar {
+            width: 0;
+            height: 100%;
+            background-color: rgba(244, 244, 244, 0.94);
+            border-radius: 5px;
+            transition: width 500ms;
+        }
+    }
+}
+
+#gameOver-screen{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: darkcyan;
+    z-index: -1;
+
+    button{
+        padding: 10px 20px;
+        font-weight: bold;
+        font-family: system-ui, sans-serif;
+        border-radius: 25px;
+        /*background-color: lightgray;*/
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+
+        &:hover {
+            box-shadow: 0 0 4px 4px white;
+        }
+
+        &:active {
+            box-shadow: 0 0 4px 4px white, inset 0 0 5px 3px #8a8a8a
+        }
+    }
+
+    h1 {
+        font-family: system-ui, sans-serif;
+        color: white;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    footer {
+        color: white;
+        font-family: system-ui, sans-serif;
+        margin-top: 40px;
+        font-size: small;
+    }
+}
+#btnPlayAgain {
+    background-color: lightgray;
+    color: black;
+    margin-bottom: 8px;
+    font-size: 1.7rem;
+}
+
+#btnExit{
+    background-color: lightpink;
+    color: black;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}

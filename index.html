@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>2D Game</title>
+    <script type="module" src="./main.js"></script>
+</head>
+<body>
+<div id="overlay">
+    <h1>Loading...</h1>
+    <div id="progress-bar">
+        <div id="bar"></div>
+    </div>
+</div>
+<div id="play-screen">
+    <div id="character"></div>
+    <div id="platform">
+        <div id="Tile1"></div>
+        <div id="Tile2"></div>
+        <div id="Tile3"></div>
+    </div>
+</div>
+<div id="start-screen">
+    <h1>WELCOME TO NINJA SHADOW</h1>
+    <button id="btnStart" type="button">START</button>
+    <footer>Copyright &copy; 2024 DEP-12. All Rights Reserved.</footer>
+</div>
+
+<div id="gameOver-screen">
+    <h1>GAME OVER</h1>
+    <span><button id="btnPlayAgain" type="button">PLAY AGAIN</button></span>
+    <span><button id="btnExit" type="button">EXIT</button></span>
+
+    <footer>Copyright &copy; 2024 DEP-12. All Rights Reserved.</footer>
+</div>
+</body>
+</html>
